@@ -5,9 +5,9 @@ description: "Check out the repository and set up SSH"
 runs:
   using: "composite"
   steps:
-    run: |
-      mkdir -p ~/.ssh
-      echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-      chmod 600 ~/.ssh/id_rsa
-      '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-  shell: bash
+    - run: |
+        mkdir -p ~/.ssh
+        echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+      shell: bash

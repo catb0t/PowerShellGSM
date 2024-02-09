@@ -18,12 +18,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: ./.github/workflows/composite-action
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/composite-action
 
-    # Runs a set of commands using the runners shell
-    - name: Deploy project via SSH
-      run: |
-        echo need to arrange the symlink to motor_town.psm1
-        ssh ssh_deployer@$DEPLOY_SERVER "del /s /q \motor-town\PowershellGSM"
-        scp -r * ssh_deployer@$DEPLOY_SERVER:/motor-town/PowershellGSM
+      - run: |
+          echo need to arrange the symlink to motor_town.psm1
+          ssh ssh_deployer@$DEPLOY_SERVER "del /s /q \motor-town\PowershellGSM"
+          scp -r * ssh_deployer@$DEPLOY_SERVER:/motor-town/PowershellGSM
+        shell: bash
