@@ -5,6 +5,8 @@ description: "Check out the repository and set up SSH"
 runs:
   using: "composite"
   steps:
+    - env:
+      SSH_DEPLOYER_POWERSHELLGSM_SECRET: ${{ env.SSH_DEPLOYER_POWERSHELLGSM_SECRET }}
     - run: |
         mkdir -p ~/.ssh
         echo -e "$SSH_DEPLOYER_POWERSHELLGSM_SECRET" > ~/.ssh/id_rsa
