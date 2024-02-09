@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: .github/workflows/composite-action
+      - uses: ./.github/workflows/composite-action
 
       # Runs a set of commands using the runners shell
       - name: Deploy project via SSH
