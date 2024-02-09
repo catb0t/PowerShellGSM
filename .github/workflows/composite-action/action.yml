@@ -6,8 +6,8 @@ runs:
   using: "composite"
   steps:
     - env:
-      SSH_DEPLOYER_POWERSHELLGSM_SECRET: ${{ env.SSH_DEPLOYER_POWERSHELLGSM_SECRET }}
-    - run: |
+        SSH_DEPLOYER_POWERSHELLGSM_SECRET: ${{ env.SSH_DEPLOYER_POWERSHELLGSM_SECRET }}
+      run: |
         mkdir -p ~/.ssh
         echo -e "$SSH_DEPLOYER_POWERSHELLGSM_SECRET" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
