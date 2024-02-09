@@ -23,6 +23,6 @@ jobs:
 
       - run: |
           echo need to arrange the symlink to motor_town.psm1
-          ssh ssh_deployer@$DEPLOY_SERVER "del /s /q \motor-town\PowershellGSM"
-          scp -r * ssh_deployer@$DEPLOY_SERVER:/motor-town/PowershellGSM
+          ssh ssh_deployer@$SSH_DEPLOYER_SERVER "del /s /q \motor-town\PowershellGSM"
+          scp -r * ssh_deployer@$SSH_DEPLOYER_SERVER:/motor-town/PowershellGSM
         shell: bash
